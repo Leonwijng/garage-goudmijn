@@ -87,11 +87,11 @@ export default function ContactPage() {
               <div className="space-y-3">
                 <a href="https://wa.me/31612345678" className="flex items-center justify-between text-[13px] text-white transition-colors hover:text-white/70">
                   <span>WhatsApp</span>
-                  <span className="text-[#555]">+31 6 12 34 56 78</span>
+                  <span className="text-[#555]">+31 623687249</span>
                 </a>
                 <a href="tel:+31612345678" className="flex items-center justify-between text-[13px] text-white transition-colors hover:text-white/70">
                   <span>Telefoon</span>
-                  <span className="text-[#555]">+31 6 12 34 56 78</span>
+                  <span className="text-[#555]">+31 623687249</span>
                 </a>
                 <a href="mailto:info@garagegroenendijk.nl" className="flex items-center justify-between text-[13px] text-white transition-colors hover:text-white/70">
                   <span>E-mail</span>
@@ -115,8 +115,8 @@ export default function ContactPage() {
             <div className="surface rounded-xl p-6">
               <p className="mb-2 text-[11px] font-semibold uppercase tracking-widest text-[#444]">Adres</p>
               <p className="text-[13px] leading-6 text-[#666]">
-                Autostraat 12<br />
-                1234 AB Tilburg<br />
+                Hoofdstraat 12<br />
+                Appingedam<br />
                 Nederland
               </p>
             </div>

@@ -18,7 +18,7 @@ const values = [
 ];
 
 const team = [
-  { initials: "JG", name: "Jan Groenendijk",   role: "Eigenaar & Verkoop"   },
+  { initials: "JG", name: "Ria Groenendijk",   role: "Eigenaar & Verkoop"   },
   { initials: "LG", name: "Lisa Groenendijk",  role: "Administratie"        },
   { initials: "TV", name: "Tom Visser",         role: "Werkplaats & APK"     },
 ];

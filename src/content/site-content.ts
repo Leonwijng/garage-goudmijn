@@ -23,7 +23,7 @@ export const cars: Car[] = [
     fuel: "benzine",
     transmission: "automaat",
     price: 24950,
-    image: "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=900&q=80",
+    image: "/golfje.jpeg",
     color: "Diepzwart metallic",
     description: "Een prachtige Golf 8 in uitstekende staat. Volledig dealer onderhouden, eerste eigenaar. Rijdt als nieuw met alle moderne veiligheids- en rijhulpsystemen.",
     specs: [
@@ -46,7 +46,7 @@ export const cars: Car[] = [
     fuel: "elektrisch",
     transmission: "automaat",
     price: 32500,
-    image: "https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=900&q=80",
+    image: "/tesla.jpg",
     color: "Pearl White",
     description: "Tesla Model 3 Long Range met indrukwekkende actieradius van 580 km. Inclusief autopilot, premium audio en glazen panoramadak. Laadkosten slechts €3 per 100 km.",
     specs: [
@@ -69,7 +69,7 @@ export const cars: Car[] = [
     fuel: "benzine",
     transmission: "automaat",
     price: 28750,
-    image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=900&q=80",
+    image: "/bmw320.jpg",
     color: "Alpinwit metallic",
     description: "Sportieve BMW 320i in topconditie. M-sport pakket, LED koplampen en navigatiesysteem. Volledig NAP, twee sleutels en dealer onderhouden.",
     specs: [
@@ -92,7 +92,7 @@ export const cars: Car[] = [
     fuel: "elektrisch",
     transmission: "automaat",
     price: 27900,
-    image: "https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?auto=format&fit=crop&w=900&q=80",
+    image: "/kia.jpg",
     color: "Gravity Blue",
     description: "Kia Niro EV met volledig elektrische aandrijving en 7 jaar fabrieksgarantie. Perfecte gezinsauto met ruime bagageruimte en modern interieur.",
     specs: [
@@ -115,8 +115,8 @@ export const cars: Car[] = [
     fuel: "benzine",
     transmission: "automaat",
     price: 26400,
-    image: "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=900&q=80",
-    color: "Navarra Blauw metallic",
+    image: "/audi.jpg",
+    color: "Grijs metallic",
     description: "Stijlvolle Audi A3 Sportback met premium afwerking. Virtual Cockpit, Bang & Olufsen audio en parkeersensoren rondom. Bijzonder rijke uitrusting.",
     specs: [
       { label: "Bouwjaar", value: "2021" },
@@ -138,7 +138,7 @@ export const cars: Car[] = [
     fuel: "hybride",
     transmission: "automaat",
     price: 33200,
-    image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=900&q=80",
+    image: "/toyota.jpg",
     color: "Super White",
     description: "Betrouwbare Toyota RAV4 Hybrid – laag verbruik, hoog comfort. Ideaal voor rijders die zuinig willen rijden zonder volledig elektrisch te gaan.",
     specs: [

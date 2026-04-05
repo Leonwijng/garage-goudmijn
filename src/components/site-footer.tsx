@@ -35,9 +35,9 @@ export function SiteFooter() {
           <div>
             <p className="mb-3 text-[11px] font-semibold uppercase tracking-widest text-[#555]">Contact</p>
             <div className="flex flex-col gap-2 text-[13px] text-[#666]">
-              <a href="tel:+31501234567"              className="transition-colors hover:text-white">050 – 123 45 67</a>
+              <a href="tel:+31501234567"              className="transition-colors hover:text-white">+31 623687249</a>
               <a href="mailto:info@garagegroenendijk.nl" className="transition-colors hover:text-white">info@garagegroenendijk.nl</a>
-              <a href="https://wa.me/31612345678"     className="transition-colors hover:text-white">WhatsApp</a>
+              <a href="https://wa.me/31623687249"     className="transition-colors hover:text-white">WhatsApp</a>
               <span className="text-[#444]">Hoofdstraat 12, Appingedam</span>
             </div>
           </div>
