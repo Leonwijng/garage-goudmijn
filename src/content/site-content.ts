@@ -158,8 +158,115 @@ export type NavItem = { label: string; href: string };
 
 export const navItems: NavItem[] = [
   { label: "Occasions", href: "/occasions" },
+  { label: "Elektrisch rijden", href: "/elektrisch-rijden" },
+  { label: "Werkplaats", href: "/werkplaats" },
   { label: "Over ons", href: "/over-ons" },
   { label: "Contact", href: "/contact" },
+];
+
+export const business = {
+  name: "Groenendijk | Garage & Occasions",
+  shortName: "Groenendijk",
+  phone: "+31 50 123 45 67",
+  phoneHref: "tel:+31501234567",
+  whatsapp: "31623687249",
+  whatsappHref: "https://wa.me/31623687249",
+  email: "info@garagegroenendijk.nl",
+  address: {
+    street: "Hoofdstraat 12",
+    city: "Appingedam",
+    postal: "9901 AB",
+    country: "Nederland",
+  },
+  hours: [
+    { day: "Maandag – vrijdag", time: "08:00 – 18:00" },
+    { day: "Zaterdag", time: "09:00 – 16:00" },
+    { day: "Zondag", time: "Gesloten" },
+  ],
+  social: {
+    facebook: "https://facebook.com/garagegroenendijk",
+    instagram: "https://instagram.com/garagegroenendijk",
+  },
+  viaBovag: "https://www.viabovag.nl/occasions/groenendijk-garage-occasions",
+  mapsEmbed:
+    "https://www.google.com/maps?q=Hoofdstraat+12+Appingedam&output=embed",
+};
+
+export const usps = [
+  {
+    title: "Persoonlijk advies",
+    text: "Je krijgt advies van mensen die je auto kennen, geen verkooppraatje uit een script.",
+  },
+  {
+    title: "BOVAG-keurmerk",
+    text: "Gecertificeerd lid van BOVAG, dus je staat er nooit alleen voor bij vragen of problemen.",
+  },
+  {
+    title: "Reactie binnen 24 uur",
+    text: "Stuur ons een bericht via WhatsApp of mail en je hoort dezelfde of volgende werkdag van ons.",
+  },
+];
+
+export type Service = {
+  title: string;
+  description: string;
+  priceFrom: string;
+};
+
+export const services: Service[] = [
+  {
+    title: "APK-keuring",
+    description: "Snelle en betrouwbare APK-keuring, met eerlijk advies als er iets gerepareerd moet worden.",
+    priceFrom: "vanaf €39,95",
+  },
+  {
+    title: "Onderhoud",
+    description: "Periodiek onderhoud volgens fabrieksvoorschrift, voor elk merk en bouwjaar.",
+    priceFrom: "vanaf €99,-",
+  },
+  {
+    title: "Reparatie",
+    description: "Van een rammelend geluidje tot een grote reparatie — we leggen altijd eerst uit wat er aan de hand is.",
+    priceFrom: "op offerte",
+  },
+  {
+    title: "Banden & uitlijning",
+    description: "Bandenwissel, balanceren en uitlijnen, zodat je veilig en zuinig onderweg bent.",
+    priceFrom: "vanaf €25,- per band",
+  },
+  {
+    title: "Airco-service",
+    description: "Controle en bijvullen van je airco, zodat je het hele jaar comfortabel rijdt.",
+    priceFrom: "vanaf €69,95",
+  },
+  {
+    title: "Schade-inspectie",
+    description: "Wij beoordelen schade en regelen waar mogelijk de afhandeling met je verzekeraar.",
+    priceFrom: "op afspraak",
+  },
+];
+
+export const evFaq = [
+  {
+    question: "Is een elektrische occasion betrouwbaar?",
+    answer:
+      "Ja. Wij controleren bij elke elektrische occasion de accustatus, laadcapaciteit en historie, zodat je niet voor verrassingen komt te staan.",
+  },
+  {
+    question: "Wat kost het opladen van een elektrische auto?",
+    answer:
+      "Thuis laden kost gemiddeld €0,10 tot €0,30 per kWh, wat neerkomt op ongeveer €3 tot €6 per 100 kilometer. Bij snelladers langs de weg ligt dat hoger.",
+  },
+  {
+    question: "Hoe ver kom ik op een volle accu?",
+    answer:
+      "Dat verschilt per model, maar de meeste elektrische occasions in ons aanbod komen tussen de 300 en 500 km op een volle lading (WLTP).",
+  },
+  {
+    question: "Kan ik mijn huidige auto inruilen voor een elektrische?",
+    answer:
+      "Zeker, we maken graag een eerlijke inruilwaardering van je huidige auto en denken mee over welke elektrische occasion bij je past.",
+  },
 ];
 
 export const reviews = [

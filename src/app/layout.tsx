@@ -1,26 +1,34 @@
 import type { Metadata } from "next";
-import { Fjalla_One, Syne } from "next/font/google";
+import { Montserrat, Open_Sans } from "next/font/google";
 import "./globals.css";
 
-const fjalla = Fjalla_One({
-  variable: "--font-fjalla",
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
   subsets: ["latin"],
-  weight: "400",
+  weight: ["600", "700"],
+  style: ["normal", "italic"],
 });
 
-const syne = Syne({
-  variable: "--font-syne",
+const openSans = Open_Sans({
+  variable: "--font-open-sans",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "600"],
 });
 
 export const metadata: Metadata = {
   title: {
-    default: "Garage Groenendijk – Occasions & Elektrisch",
-    template: "%s | Garage Groenendijk",
+    default: "Garage Groenendijk – Occasions, APK & Onderhoud in Appingedam",
+    template: "%s | Groenendijk Garage & Occasions",
   },
   description:
-    "Garage Groenendijk – jouw betrouwbare dealer voor occasions, elektrische auto's en persoonlijk advies. Bekijk ons aanbod en neem contact op.",
+    "Groenendijk Garage & Occasions in Appingedam: al 70 jaar jouw vertrouwde adres voor occasions, elektrische auto's, APK, onderhoud en reparatie. Persoonlijk advies, eerlijke prijs.",
+  keywords: [
+    "occasion Appingedam",
+    "APK Appingedam",
+    "elektrische occasion Groningen",
+    "garage Appingedam",
+    "occasions Groningen",
+  ],
 };
 
 export default function RootLayout({
@@ -29,16 +37,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="nl" className="dark">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Stack+Sans+Text:wght@200..700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body className={`${fjalla.variable} ${syne.variable} antialiased bg-black text-[#ededed]`}>
+    <html lang="nl">
+      <body className={`${montserrat.variable} ${openSans.variable} antialiased bg-white text-[#333333]`}>
         {children}
       </body>
     </html>

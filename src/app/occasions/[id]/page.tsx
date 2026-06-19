@@ -1,9 +1,9 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, MessageCircle, Phone } from "lucide-react";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
-import { cars } from "@/content/site-content";
+import { cars, business } from "@/content/site-content";
 
 const fuelLabel: Record<string, string> = {
   elektrisch: "Elektrisch",
@@ -44,14 +44,14 @@ export default async function OccasionDetailPage({
   const related = cars.filter((c) => c.id !== car.id).slice(0, 3);
 
   return (
-    <div className="bg-black">
+    <div className="bg-white">
       <SiteHeader />
 
-      <div className="mx-auto max-w-5xl px-5 pt-24 pb-32">
+      <div className="mx-auto max-w-6xl px-5 pt-24 pb-32">
         {/* Back */}
         <Link
           href="/occasions"
-          className="mb-8 inline-flex items-center gap-1.5 text-[13px] text-[#555] transition-colors hover:text-white"
+          className="mb-8 inline-flex items-center gap-1.5 text-[13px] font-semibold text-[#2E4DA0] transition-colors hover:text-[#1A2F5E]"
         >
           <ArrowLeft className="size-3.5" />
           Alle occasions
@@ -61,21 +61,20 @@ export default async function OccasionDetailPage({
           {/* LEFT */}
           <div>
             {/* Image */}
-            <div className="relative overflow-hidden rounded-xl bg-[#0a0a0a]">
+            <div className="relative overflow-hidden rounded-xl bg-[#EBF0FA]">
               <img
                 src={car.image}
                 alt={`${car.make} ${car.model}`}
                 className="aspect-[16/9] w-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-              <span className="absolute bottom-4 left-4 rounded-md bg-black/60 px-2.5 py-1 text-[12px] font-medium text-white backdrop-blur-sm">
+              <span className="absolute bottom-4 left-4 rounded-md bg-[#1A2F5E] px-2.5 py-1 text-[12px] font-semibold text-white">
                 {fuelLabel[car.fuel]}
               </span>
             </div>
 
             {/* Title */}
             <div className="mt-7">
-              <h1 className="text-2xl font-semibold tracking-tight text-white">
+              <h1 className="font-heading text-2xl font-bold tracking-tight text-[#1A2F5E]">
                 {car.make} {car.model}
               </h1>
               <p className="mt-1 text-[13px] text-[#555]">
@@ -84,29 +83,29 @@ export default async function OccasionDetailPage({
             </div>
 
             {/* Specs */}
-            <div className="mt-7 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-white/[0.07] bg-white/[0.07] sm:grid-cols-3">
+            <div className="mt-7 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-[#1A2F5E]/10 bg-[#1A2F5E]/10 sm:grid-cols-3">
               {car.specs.map((s) => (
-                <div key={s.label} className="bg-black px-4 py-4">
-                  <p className="text-[11px] text-[#444]">{s.label}</p>
-                  <p className="mt-0.5 text-[13px] font-medium text-white">{s.value}</p>
+                <div key={s.label} className="bg-white px-4 py-4">
+                  <p className="text-[11px] text-[#8693b8]">{s.label}</p>
+                  <p className="mt-0.5 text-[13px] font-semibold text-[#1A2F5E]">{s.value}</p>
                 </div>
               ))}
             </div>
 
             {/* Description */}
             <div className="divider mt-8 pt-8">
-              <h2 className="mb-3 text-[13px] font-semibold uppercase tracking-widest text-[#444]">
+              <h2 className="mb-3 font-heading text-[13px] font-bold uppercase tracking-widest text-[#2E4DA0]">
                 Beschrijving
               </h2>
-              <p className="text-[14px] leading-7 text-[#777]">{car.description}</p>
+              <p className="text-[14px] leading-7 text-[#333333]">{car.description}</p>
             </div>
 
             {/* Trust */}
             <div className="divider mt-8 pt-8">
               <ul className="space-y-2">
                 {["Dealer onderhouden & NAP gecertificeerd", "APK-keuring bij aflevering", "1 maand garantie standaard inbegrepen", "Inruil mogelijk"].map((t) => (
-                  <li key={t} className="flex items-center gap-2 text-[13px] text-[#666]">
-                    <span className="size-1.5 shrink-0 rounded-full bg-white/25" />
+                  <li key={t} className="flex items-center gap-2 text-[13px] text-[#333333]">
+                    <span className="size-1.5 shrink-0 rounded-full bg-[#2E4DA0]" />
                     {t}
                   </li>
                 ))}
@@ -117,28 +116,30 @@ export default async function OccasionDetailPage({
           {/* RIGHT – sticky sidebar */}
           <div className="lg:sticky lg:top-20">
             <div className="surface rounded-xl p-6">
-              <p className="text-[11px] font-semibold uppercase tracking-widest text-[#444]">Vraagprijs</p>
-              <p className="mt-2 text-3xl font-semibold tracking-tight text-white">{price(car.price)}</p>
+              <p className="font-heading text-[11px] font-bold uppercase tracking-widest text-[#2E4DA0]">Vraagprijs</p>
+              <p className="mt-2 text-3xl font-bold tracking-tight text-[#1A2F5E]">{price(car.price)}</p>
               <p className="mt-1 text-[12px] text-[#555]">incl. BTW &middot; excl. tenaamstelling</p>
 
               <div className="mt-6 flex flex-col gap-3">
                 <a
-                  href={`https://wa.me/31612345678?text=Hallo, ik heb interesse in de ${car.make} ${car.model}`}
+                  href={`${business.whatsappHref}?text=${encodeURIComponent(`Hallo, ik heb interesse in de ${car.make} ${car.model}`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 rounded-md bg-[#25d366] px-4 py-2.5 text-[13px] font-semibold text-black transition-opacity hover:opacity-90"
+                  className="btn-whatsapp justify-center"
                 >
+                  <MessageCircle className="size-4" />
                   Stuur een WhatsApp
                 </a>
                 <a
-                  href="tel:+31612345678"
+                  href={business.phoneHref}
                   className="btn-ghost justify-center"
                 >
-                  <span>Bel ons</span>
+                  <Phone className="size-3.5" />
+                  Bel ons
                 </a>
                 <Link
                   href="/contact"
-                  className="flex items-center justify-center gap-1 text-[12px] text-[#555] transition-colors hover:text-white"
+                  className="flex items-center justify-center gap-1 text-[12px] font-semibold text-[#2E4DA0] transition-colors hover:text-[#1A2F5E]"
                 >
                   Of stuur een bericht <ArrowUpRight className="size-3" />
                 </Link>
@@ -146,10 +147,10 @@ export default async function OccasionDetailPage({
 
               <div className="divider mt-6 pt-5">
                 <div className="flex items-center gap-2">
-                  <div className="size-8 rounded-full bg-white/[0.07] flex items-center justify-center text-[11px] font-semibold text-white">JG</div>
+                  <div className="flex size-8 items-center justify-center rounded-full bg-[#2E4DA0] text-[11px] font-semibold text-white">RG</div>
                   <div>
-                    <p className="text-[12px] font-medium text-white">Jan Groenendijk</p>
-                    <p className="text-[11px] text-[#555]">Reageert binnen 1 uur</p>
+                    <p className="text-[12px] font-semibold text-[#1A2F5E]">Ria Groenendijk</p>
+                    <p className="text-[11px] text-[#555]">Reageert binnen 24 uur</p>
                   </div>
                 </div>
               </div>
@@ -160,26 +161,25 @@ export default async function OccasionDetailPage({
         {/* Related */}
         {related.length > 0 && (
           <div className="divider mt-20 pt-16">
-            <h2 className="mb-8 text-xl font-semibold tracking-tight text-white">Vergelijkbare occasions</h2>
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <h2 className="mb-8 font-heading text-xl font-bold tracking-tight text-[#1A2F5E]">Vergelijkbare occasions</h2>
+            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {related.map((rc) => (
                 <Link
                   key={rc.id}
                   href={`/occasions/${rc.id}`}
                   className="group surface surface-hover block overflow-hidden rounded-xl transition-all duration-200"
                 >
-                  <div className="relative h-40 overflow-hidden bg-[#0a0a0a]">
+                  <div className="relative h-40 overflow-hidden bg-[#EBF0FA]">
                     <img
                       src={rc.image}
                       alt={`${rc.make} ${rc.model}`}
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                   </div>
                   <div className="p-4">
-                    <p className="text-[13px] font-medium text-white">{rc.make} {rc.model}</p>
+                    <p className="font-heading text-[13px] font-bold text-[#1A2F5E]">{rc.make} {rc.model}</p>
                     <p className="mt-0.5 text-[12px] text-[#555]">{rc.year} &middot; {rc.km.toLocaleString("nl-NL")} km</p>
-                    <p className="mt-2 text-[13px] font-semibold text-white">{price(rc.price)}</p>
+                    <p className="mt-2 text-[13px] font-bold text-[#1A2F5E]">{price(rc.price)}</p>
                   </div>
                 </Link>
               ))}
